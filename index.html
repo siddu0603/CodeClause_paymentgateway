@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+              <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+              <link rel="stylesheet" href="style.css">
+              <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+              <script src="./js/donation.js"></script>
+              <script src="script.js"></script>
+              <script>
+           function SubForm (){
+                $.ajax({
+                    url:"https://api.apispreadsheets.com/data/BJPiyA3T23KqIDZ0/",
+                    type:"post",
+                    data:$("#myForm").serializeArray(),
+                    success: function(){
+                        alert("Form Data Submitted :)")
+                    },
+                    error: function(){
+                        alert("There was an error :(")
+                    }
+                });
+            }
+              </script>
+      </head>
+      <body>
+      <div class="donation-container">
+                  
+                  <div class="donation-box">
+                      <div class="title">PAYMENT GATEWAY</div>
+    
+                         <div class="fields">
+                                <form id="myForm">  
+                                    <label>First_Name</label>
+                                    <input type="text" id="firstName" name="First_Name" placeholder="First Name"> </input>
+                                    <label>Last_Name</label>
+                                    <input type="text" id="lastName" name="Last_Name" placeholder="Last Name"> </input>
+                                    <br>
+                                    <label>Email</label>
+                                    <br>
+                                    <input type="email" id="email"  name="Email" placeholder="Email"> </input>
+                                </form>
+                        </div>
+                      
+                      
+                      <div class="amount">
+                        <table>
+                            <tr>
+                       <th> <h4>Select Currency</h4></th>
+                       <th> <select id="currencySelect">
+                            <option value="INR">INR</option>
+                            <option value="USD">USD</option>
+                          </select>
+                        </th>
+                        </tr>
+                    </table>
+                          <div  >Enter amount</div>
+                          <div class="button"><input type="text" class="set-amount"  id ="donationAmount" placeholder="Enter amount"> </input></div>
+                      </div>
+                      
+                      <div class="confirm">
+                          
+                      </div>
+        
+                      <div class="donate-button" id="donateButton" onclick="openPaymentModal()">Pay</div>
+                  </div>
+                  
+              </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://raw.githubusercontent.com/jerryluk/jquery.autogrow/master/jquery.autogrow-min.js"></script>
+      </body>
+</html>
